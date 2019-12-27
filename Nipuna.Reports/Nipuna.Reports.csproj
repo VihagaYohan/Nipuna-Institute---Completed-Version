@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24E9DD7A-7FAC-4C26-8156-130D3E8BA3A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nipuna.Reports</RootNamespace>
+    <AssemblyName>Nipuna.Reports</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttendanceRecordDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendanceRecordDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DataSets\AttendanceFilterLecturerId.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendanceFilterLecturerId.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\AttendanceFilterStudentId.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendanceFilterStudentId.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\AttendanceRecord.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttendanceRecord.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CourseDetailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LectuerDetailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LectuerDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LecturerCourseEnrollmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LecturerCourseEnrollmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LecturerDetailsFilterLectuerId.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LecturerDetailsFilterLectuerId.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LecturerIncomeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LecturerIncomeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LecturerPaymentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LecturerPaymentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LeturerPayment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeturerPayment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\PaymentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\PaymentFilterLecturerId.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentFilterLecturerId.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\PaymentFilterStudentId.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentFilterStudentId.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\PaymentsByDateDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentsByDateDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\StudentAttendanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentAttendanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\StudentAttendanceMatrix.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentAttendanceMatrix.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\StudentCourseEnrollmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentCourseEnrollmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\StudentDetailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\StudentDetailsFilterStudentId.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDetailsFilterStudentId.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\StudentRegistrationsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentRegistrationsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\UsersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_AttendanceFilterLecturerId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_AttendanceFilterLecturerId.Designer.cs">
+      <DependentUpon>frm_AttendanceFilterLecturerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_AttendanceFilterStudentId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_AttendanceFilterStudentId.Designer.cs">
+      <DependentUpon>frm_AttendanceFilterStudentId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_AttendanceRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_AttendanceRecord.Designer.cs">
+      <DependentUpon>frm_AttendanceRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_CourseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_CourseDetails.Designer.cs">
+      <DependentUpon>frm_CourseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_CourseEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_CourseEnrollment.Designer.cs">
+      <DependentUpon>frm_CourseEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_LecturePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_LecturePayment.Designer.cs">
+      <DependentUpon>frm_LecturePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerDetails.Designer.cs">
+      <DependentUpon>frm_LecturerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerDetailsFilterLecturerId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerDetailsFilterLecturerId.Designer.cs">
+      <DependentUpon>frm_LecturerDetailsFilterLecturerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerEnrollment.Designer.cs">
+      <DependentUpon>frm_LecturerEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerEnrollmentByCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerEnrollmentByCourse.Designer.cs">
+      <DependentUpon>frm_LecturerEnrollmentByCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerEnrollmentByLecturerName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerEnrollmentByLecturerName.Designer.cs">
+      <DependentUpon>frm_LecturerEnrollmentByLecturerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_LecturerIncome.Designer.cs">
+      <DependentUpon>frm_LecturerIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentByLecturerId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentByLecturerId.Designer.cs">
+      <DependentUpon>frm_PaymentByLecturerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentByStudentId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentByStudentId.Designer.cs">
+      <DependentUpon>frm_PaymentByStudentId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentFilterLecturerId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentFilterLecturerId.Designer.cs">
+      <DependentUpon>frm_PaymentFilterLecturerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentFilterStudentId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentFilterStudentId.Designer.cs">
+      <DependentUpon>frm_PaymentFilterStudentId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentsByDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_PaymentsByDate.Designer.cs">
+      <DependentUpon>frm_PaymentsByDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_StudentAttendanceDates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_StudentAttendanceDates.Designer.cs">
+      <DependentUpon>frm_StudentAttendanceDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_StudentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_StudentDetails.Designer.cs">
+      <DependentUpon>frm_StudentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_StudentAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_StudentAttendance.Designer.cs">
+      <DependentUpon>frm_StudentAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_StudentDetailsFilterStudentId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_StudentDetailsFilterStudentId.Designer.cs">
+      <DependentUpon>frm_StudentDetailsFilterStudentId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_StudentPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_StudentPayment.Designer.cs">
+      <DependentUpon>frm_StudentPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_StudentRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_StudentRegistration.Designer.cs">
+      <DependentUpon>frm_StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frm_Users.Designer.cs">
+      <DependentUpon>frm_Users.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AttendanceRecordDataSet.xsc">
+      <DependentUpon>AttendanceRecordDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AttendanceRecordDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttendanceRecordDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AttendanceRecordDataSet.xss">
+      <DependentUpon>AttendanceRecordDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AttendanceFilterLecturerId.xsc">
+      <DependentUpon>AttendanceFilterLecturerId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AttendanceFilterLecturerId.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttendanceFilterLecturerId.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\AttendanceFilterLecturerId.xss">
+      <DependentUpon>AttendanceFilterLecturerId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AttendanceFilterStudentId.xsc">
+      <DependentUpon>AttendanceFilterStudentId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AttendanceFilterStudentId.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttendanceFilterStudentId.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\AttendanceFilterStudentId.xss">
+      <DependentUpon>AttendanceFilterStudentId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AttendanceRecord.xsc">
+      <DependentUpon>AttendanceRecord.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\AttendanceRecord.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttendanceRecord.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\AttendanceRecord.xss">
+      <DependentUpon>AttendanceRecord.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CourseDetailsDataSet.xsc">
+      <DependentUpon>CourseDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CourseDetailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourseDetailsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\CourseDetailsDataSet.xss">
+      <DependentUpon>CourseDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LectuerDetailsDataSet.xsc">
+      <DependentUpon>LectuerDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LectuerDetailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LectuerDetailsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LectuerDetailsDataSet.xss">
+      <DependentUpon>LectuerDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerCourseEnrollmentDataSet.xsc">
+      <DependentUpon>LecturerCourseEnrollmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerCourseEnrollmentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LecturerCourseEnrollmentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LecturerCourseEnrollmentDataSet.xss">
+      <DependentUpon>LecturerCourseEnrollmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerDetailsFilterLectuerId.xsc">
+      <DependentUpon>LecturerDetailsFilterLectuerId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerDetailsFilterLectuerId.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LecturerDetailsFilterLectuerId.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LecturerDetailsFilterLectuerId.xss">
+      <DependentUpon>LecturerDetailsFilterLectuerId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerIncomeDataSet.xsc">
+      <DependentUpon>LecturerIncomeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerIncomeDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LecturerIncomeDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LecturerIncomeDataSet.xss">
+      <DependentUpon>LecturerIncomeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerPaymentDataSet.xsc">
+      <DependentUpon>LecturerPaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LecturerPaymentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LecturerPaymentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LecturerPaymentDataSet.xss">
+      <DependentUpon>LecturerPaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LeturerPayment.xsc">
+      <DependentUpon>LeturerPayment.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LeturerPayment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LeturerPayment.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\LeturerPayment.xss">
+      <DependentUpon>LeturerPayment.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentDataSet.xsc">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\PaymentDataSet.xss">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentFilterLecturerId.xsc">
+      <DependentUpon>PaymentFilterLecturerId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentFilterLecturerId.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentFilterLecturerId.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\PaymentFilterLecturerId.xss">
+      <DependentUpon>PaymentFilterLecturerId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentFilterStudentId.xsc">
+      <DependentUpon>PaymentFilterStudentId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentFilterStudentId.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentFilterStudentId.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\PaymentFilterStudentId.xss">
+      <DependentUpon>PaymentFilterStudentId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentsByDateDataSet.xsc">
+      <DependentUpon>PaymentsByDateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentsByDateDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentsByDateDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\PaymentsByDateDataSet.xss">
+      <DependentUpon>PaymentsByDateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentAttendanceDataSet.xsc">
+      <DependentUpon>StudentAttendanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentAttendanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentAttendanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\StudentAttendanceDataSet.xss">
+      <DependentUpon>StudentAttendanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentAttendanceMatrix.xsc">
+      <DependentUpon>StudentAttendanceMatrix.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentAttendanceMatrix.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentAttendanceMatrix.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\StudentAttendanceMatrix.xss">
+      <DependentUpon>StudentAttendanceMatrix.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentCourseEnrollmentDataSet.xsc">
+      <DependentUpon>StudentCourseEnrollmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentCourseEnrollmentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentCourseEnrollmentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\StudentCourseEnrollmentDataSet.xss">
+      <DependentUpon>StudentCourseEnrollmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentDetailsFilterStudentId.xsc">
+      <DependentUpon>StudentDetailsFilterStudentId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentDetailsFilterStudentId.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDetailsFilterStudentId.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\StudentDetailsFilterStudentId.xss">
+      <DependentUpon>StudentDetailsFilterStudentId.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentRegistrationsDataSet.xsc">
+      <DependentUpon>StudentRegistrationsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentRegistrationsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentRegistrationsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\StudentRegistrationsDataSet.xss">
+      <DependentUpon>StudentRegistrationsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UsersDataSet.xsc">
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\UsersDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsersDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\UsersDataSet.xss">
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Nipuna Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_AttendanceFilterLecturerId.resx">
+      <DependentUpon>frm_AttendanceFilterLecturerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_AttendanceFilterStudentId.resx">
+      <DependentUpon>frm_AttendanceFilterStudentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_AttendanceRecord.resx">
+      <DependentUpon>frm_AttendanceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_CourseDetails.resx">
+      <DependentUpon>frm_CourseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_CourseEnrollment.resx">
+      <DependentUpon>frm_CourseEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_LecturePayment.resx">
+      <DependentUpon>frm_LecturePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_LecturerDetails.resx">
+      <DependentUpon>frm_LecturerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_LecturerDetailsFilterLecturerId.resx">
+      <DependentUpon>frm_LecturerDetailsFilterLecturerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_LecturerEnrollment.resx">
+      <DependentUpon>frm_LecturerEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_LecturerEnrollmentByCourse.resx">
+      <DependentUpon>frm_LecturerEnrollmentByCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_LecturerEnrollmentByLecturerName.resx">
+      <DependentUpon>frm_LecturerEnrollmentByLecturerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_LecturerIncome.resx">
+      <DependentUpon>frm_LecturerIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_PaymentByLecturerId.resx">
+      <DependentUpon>frm_PaymentByLecturerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_PaymentByStudentId.resx">
+      <DependentUpon>frm_PaymentByStudentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_PaymentFilterLecturerId.resx">
+      <DependentUpon>frm_PaymentFilterLecturerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_PaymentFilterStudentId.resx">
+      <DependentUpon>frm_PaymentFilterStudentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_PaymentsByDate.resx">
+      <DependentUpon>frm_PaymentsByDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_StudentAttendanceDates.resx">
+      <DependentUpon>frm_StudentAttendanceDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_StudentDetails.resx">
+      <DependentUpon>frm_StudentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_StudentAttendance.resx">
+      <DependentUpon>frm_StudentAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_StudentDetailsFilterStudentId.resx">
+      <DependentUpon>frm_StudentDetailsFilterStudentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_StudentPayment.resx">
+      <DependentUpon>frm_StudentPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_StudentRegistration.resx">
+      <DependentUpon>frm_StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_Users.resx">
+      <DependentUpon>frm_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rep_AttendanceFilterLecturerId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_AttendanceFilterStudentId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_AttendanceMatrix.rdlc" />
+    <EmbeddedResource Include="Reports\rep_AttendanceReport.rdlc" />
+    <EmbeddedResource Include="Reports\rep_CourseDetails.rdlc" />
+    <EmbeddedResource Include="Reports\rep_LectuerDetails.rdlc" />
+    <EmbeddedResource Include="Reports\rep_LecturerDetailsFilterLectuererId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_LecturerEnrollment.rdlc" />
+    <EmbeddedResource Include="Reports\rep_LecturerEnrollmentByCourse.rdlc" />
+    <EmbeddedResource Include="Reports\rep_LecturerEnrollmentByLecturerNamerdlc.rdlc" />
+    <EmbeddedResource Include="Reports\rep_LecturerTotal.rdlc" />
+    <EmbeddedResource Include="Reports\rep_PaymentByDate.rdlc" />
+    <EmbeddedResource Include="Reports\rep_PaymentByLecturerId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_PaymentByStudentId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_PaymentFilterLecturerId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_PaymentFilterStudentId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_StudentAttendanceDates.rdlc" />
+    <EmbeddedResource Include="Reports\rep_StudentAttendance.rdlc" />
+    <EmbeddedResource Include="Reports\rep_StudentDetails.rdlc" />
+    <EmbeddedResource Include="Reports\rep_StudentDetailsFilterStudentId.rdlc" />
+    <EmbeddedResource Include="Reports\rep_StudentEnrollment.rdlc" />
+    <EmbeddedResource Include="Reports\rep_StudentPayment.rdlc" />
+    <EmbeddedResource Include="Reports\rep_StudentRegistration.rdlc" />
+    <EmbeddedResource Include="Reports\rep_Users.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\StudentDetailsDataSet.xsc">
+      <DependentUpon>StudentDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\StudentDetailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDetailsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\StudentDetailsDataSet.xss">
+      <DependentUpon>StudentDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
